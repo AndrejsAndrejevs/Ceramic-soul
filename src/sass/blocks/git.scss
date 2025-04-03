@@ -108,16 +108,28 @@
         margin-right: 15px;
 
     }
+
+    &__btn {
+        margin-top: 20px;
+    }
 }
 
 @media screen and (min-width: 768px) {
     .git {
         &__wrapper {
-            margin-top: 45px;
+            margin: 45px 0 0 24px;
         }
 
         &__icon {
             display: block;
+        }
+
+        &__input {
+            width: 300px;
+        }
+
+        &__textarea {
+            width: 300px;
         }
     }
 }
@@ -125,7 +137,7 @@
 @media screen and (min-width: 1200px) {
     .git {
         &__wrapper {
-            margin-top: 80px;
+            margin: 80px 0 0 0;
         }
 
         &__col {
@@ -157,9 +169,15 @@
 
 @media screen and (min-width: 1920px) {
     .git {
+        padding-top: 100px;
+
+        &__form {
+            width: 645px;
+        }
+
         &__col {
             &_img {
-
+                padding-right: 0;
 
                 img {
                     width: 573px;
@@ -168,8 +186,19 @@
             }
 
             &_form {
-                padding-left: 116px;
+                padding-left: 147px;
             }
         }
+
+        &__fieldset {
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+
+
+
+
     }
 }
