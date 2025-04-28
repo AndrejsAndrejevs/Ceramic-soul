@@ -1,0 +1,188 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.catalog {
+    padding-top: 50px;
+
+    &__title {
+        margin-top: 60px;
+    }
+
+    &__tabs {
+        margin-top: 60px;
+        border: 1px solid $dark;
+        padding: 13px 25px;
+        display: flex;
+        column-gap: 50px;
+        row-gap: 13px;
+        flex-wrap: wrap;
+
+    }
+
+    &__tab {
+        position: relative;
+        border: none;
+        background: none;
+        padding: 0;
+        color: #000;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+
+        &_active::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #000000;
+        }
+    }
+
+    &_footer {
+        margin-top: 60px;
+    }
+
+    &__content {
+        margin-top: 60px;
+
+        &-item {
+            flex-direction: column;
+            row-gap: 20px;
+            align-items: center;
+        }
+    }
+
+    &__block {
+        max-width: 340px;
+    }
+
+    &__list {
+        &-img {
+            img {
+                width: 340px;
+                height: 198px;
+                object-fit: cover;
+            }
+        }
+
+        &-name {
+            padding: 11px 12px 0 12px;
+            color: #000;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        &-price {
+            padding: 8px 12px 17px 12px;
+            color: #000;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        &-descr {
+            display: block;
+            border: 1px solid $dark;
+            background: $light;
+            box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+            border-top: none;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .catalog {
+        &__tabs {
+            width: 460px;
+        }
+
+        &__block {
+            width: 340px;
+        }
+
+        &__content {
+            &-item {
+                position: relative;
+                padding: 10px 10px 0 10px;
+                flex-direction: unset;
+                row-gap: 20px;
+                column-gap: 20px;
+                align-items: unset;
+                flex-wrap: wrap;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 200px;
+                    height: 1px;
+                    background-color: $dark;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 200px;
+                    background-color: $dark;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .catalog {
+        &__content {
+            &-item {
+                padding: 25px 25px 0 25px;
+                row-gap: 30px;
+                column-gap: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .catalog {
+        padding-top: 40px;
+
+        &__title {
+            margin-top: 100px;
+        }
+
+        &__content {
+            &-item {
+                row-gap: 25px;
+                column-gap: 83px;
+            }
+        }
+
+        &__block {
+            max-width: 285px;
+        }
+
+        &__list {
+            &-img {
+                img {
+                    width: 285px;
+                    height: 180px;
+                }
+            }
+        }
+
+        &_footer {
+            margin-top: 100px;
+        }
+    }
+}
