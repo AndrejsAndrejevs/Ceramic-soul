@@ -23,3 +23,27 @@
     text-transform: uppercase;
     cursor: pointer;
 }
+
+@mixin lines {
+    &::before {
+            content: "";
+            display: block;
+            width: 200px;
+            height: 1px;
+            background-color: $dark;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    
+        &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 200px;
+            background-color: $dark;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+}

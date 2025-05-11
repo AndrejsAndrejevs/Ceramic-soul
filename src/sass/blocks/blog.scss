@@ -1,0 +1,122 @@
+@use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
+
+.blog {
+    padding-top: 50px;
+
+    &__title {
+        margin-top: 60px;
+    }
+
+    &__title-h3 {
+        font-size: 24px;
+        text-align: unset;
+    }
+
+    &__wrapper {
+        margin-top: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+
+    }
+
+    &__card {
+        border: 1px solid $dark;
+        background: $light;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    &__img {
+        max-inline-size: calc(100% + 2px);
+        transform: translateX(-1px) translateY(-1px);
+        object-fit: cover;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px 25px 0 25px;
+    }
+
+    &__text {
+        padding: 25px 25px 25px 25px;
+        color: $dark;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &_footer {
+        margin-top: 60px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .blog {
+        &__wrapper {
+            padding: 25px 25px 0 25px;
+            position: relative;
+            @include lines;
+        }
+
+        &__info {
+            gap: 0;
+            justify-content: space-between;
+        }
+
+        &__btn {
+            transform: translateY(-1px);
+        }
+
+        &__text {
+            padding: 14px 25px 25px 25px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .blog {
+        &__wrapper {
+            align-items: flex-start;
+            column-gap: 50px;
+            row-gap: 40px;
+        }
+
+        &__card {
+            width: 520px;
+        }
+
+        &__descr {
+            height: 240px;
+        }
+
+        &__img {
+            height: 100%;
+        }
+
+        &__info {
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .blog {
+        padding-top: 40px;
+
+        &__title {
+            margin-top: 100px;
+        }
+
+        &__card {
+            width: 670px;
+        }
+
+        &_footer {
+            margin-top: 100px;
+        }
+    }
+}
