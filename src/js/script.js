@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import JustValidate from 'just-validate';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -68,4 +69,83 @@ try {
 
     // Показываем первый контент при загрузке
     contents.forEach((c, i) => (c.style.display = i === 0 ? "flex" : "none"));
+} catch (e) { }
+
+try {
+    const validator = new JustValidate(".git__form");
+
+    validator
+        .addField("#name", [
+            {
+                rule: "required",
+                errorMessage: "need feel",
+            },
+            {
+                rule: "minLength",
+                value: 2,
+                errorMessage: "min 2 char.",
+            },
+        ])
+        .addField("#email", [
+            {
+                rule: "required",
+            },
+            {
+                rule: "email",
+            },
+        ])
+        .addField("#question", [
+            {
+                rule: "required",
+            },
+            {
+                rule: "minLength",
+                value: 5,
+            },
+        ],
+            {
+                errorsContainer: document
+                    .querySelector("#question")
+                    .parentElement.querySelector(".error-message"),
+            }
+        )
+        .addField("#checkbox", [
+            {
+                rule: "required",
+            },
+        ],
+            {
+                errorsContainer: document
+                    .querySelector("#checkbox")
+                    .parentElement.parentElement.querySelector(".main-error-message"),
+            });
+
+} catch (e) { }
+
+try {
+    const footervalidator = new JustValidate(".footer__forms");
+    footervalidator
+        .addField(".footer__input", [
+            {
+                rule: "required",
+            },
+            {
+                rule: "email",
+            },
+        ],
+            {
+                errorsContainer: document
+                    .querySelector(".footer__input")
+                    .parentElement.querySelector(".email-error-message"),
+            })
+        .addField(".footer__checkbox-input", [
+            {
+                rule: "required",
+            },
+        ],
+            {
+                errorsContainer: document
+                    .querySelector(".footer__checkbox-input")
+                    .parentElement.parentElement.querySelector(".checkbox-error-message"),
+            });
 } catch (e) { }

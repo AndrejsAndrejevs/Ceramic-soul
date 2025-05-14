@@ -1,6 +1,22 @@
 @use "/src/sass/base/variables.scss" as *;
 
 .footer {
+    .just-validate-error-field {
+        border-bottom: 1px solid $ui-error;
+
+        &:focus-visible {
+            border: none;
+            // outline: 1px solid $ui-error;
+            border-bottom: 1px solid $ui-error;
+
+        }
+
+        &::placeholder {
+            color: $ui-error;
+        }
+
+    }
+
     margin-top: 95px;
     padding-bottom: 50px;
     background-color: $dark;
@@ -51,6 +67,13 @@
         background-color: transparent;
         border: none;
         border-bottom: 1px solid $ui-active;
+
+        &:focus-visible {
+            border: none;
+            outline: 1px solid $dark;
+            border-bottom: 1px solid $ui-active;
+
+        }
 
         &::placeholder {
             color: $light;

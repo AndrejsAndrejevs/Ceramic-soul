@@ -115,11 +115,12 @@
 						<label for="question" class="git__label git__label-text">Your question</label>
 						<textarea name="question" id="question" placeholder="Question" class="git__textarea"
 							required></textarea>
-
+						<div class="error-message"></div>
 						<label for="checkbox" class="git__label 	git__chech-block">
 							<input type="checkbox" class="git__checkbox" id="checkbox" required> I agree with the <a
 								href="#">terms</a>
 						</label>
+						<div class="main-error-message"></div>
 						<button class="btn-send git__btn">send request</button>
 						<div class="git__form">
 							<img src="/src/img/form/vase.png" alt="vase" class="git__icon">
@@ -166,13 +167,15 @@
 					<h2 class="footer__title">newsletter</h2>
 					<div class="footer__small-title">Keep up to date with news and promotions</div>
 					<div class="footer__form">
-						<form>
+						<form class="footer__forms">
 							<input type="email" class="footer__input" name="email" placeholder="Enter your e-mail"
 								required>
+							<div class="email-error-message"></div>
 							<label class="footer__checkbox">
 								<input class="footer__checkbox-input" type="checkbox">
 								I agree with the <a href="#">terms</a>
 							</label>
+							<div class="checkbox-error-message"></div>
 							<button class="btn-submit footer__button">submit</button>
 						</form>
 					</div>
